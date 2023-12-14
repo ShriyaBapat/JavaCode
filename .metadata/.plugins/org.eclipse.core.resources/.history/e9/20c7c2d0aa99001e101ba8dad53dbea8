@@ -1,0 +1,23 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.slot;
+import com.example.demo.model.ParkingLot;
+
+@Service
+public class ParkingFunctionalities {
+	
+	
+	public String create(int capacity)
+	{
+	
+	for(int i=0;i<capacity;i++)
+	{
+		slot eachslot=new slot();
+	}
+	return null;
+	}
+	
+
+}

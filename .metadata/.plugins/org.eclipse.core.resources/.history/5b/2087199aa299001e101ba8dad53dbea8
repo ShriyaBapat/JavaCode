@@ -1,0 +1,16 @@
+package com.example.demo.model;
+
+import java.util.List;
+
+import com.example.demo.entity.Car;
+
+public class ParkingLot {
+	
+	public ParkingLot(int capacity2) {
+		// TODO Auto-generated constructor stub
+	}
+	private int capacity;
+	public List<Car> carlist;
+	
+
+}

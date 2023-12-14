@@ -1,0 +1,46 @@
+package com.example.demo;
+
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.entity.slot;
+import com.example.demo.repository.slotRepository;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class slotTest {
+	
+	 	@Mock
+	    private slotRepository slotrepo;
+
+	    @InjectMocks
+	    private slot entity;
+	    
+	    @Test
+		public void testGettersAndSetters() {
+			Integer id = 1;
+			Integer registration_no = 123;
+			String color = "RED";
+			Boolean occupied=true;
+			
+
+			entity.setId(id);
+			entity.setFirstName(firstName);
+			entity.setLastName(lastName);
+			entity.setDateOfBirth(dateOfBirth);
+			entity.setGender(gender);
+
+			assertEquals(id, entity.getId());
+			assertEquals(firstName, entity.getFirstName());
+			assertEquals(lastName, entity.getLastName());
+			assertEquals(dateOfBirth, entity.getDateOfBirth());
+			assertEquals(gender, entity.getGender());
+		}
+
+}

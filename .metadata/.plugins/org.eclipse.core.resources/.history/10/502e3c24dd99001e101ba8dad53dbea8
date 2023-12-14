@@ -1,0 +1,52 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.slot;
+import com.example.demo.model.ParkingLot;
+import com.example.demo.repository.*;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Service
+public class ParkingFunctionalities {
+	
+	@Autowired
+	private slotRepository slotrepo;
+	
+	public String create(int capacity)
+	{
+	
+	for(int i=0;i<capacity;i++)
+	{
+		slot eachslot=new slot();
+		eachslot.setOccupied(false);
+		eachslot.setParkinglotno(1);
+		slotrepo.save(eachslot);
+		
+	}
+	return null;
+	}
+	
+	public String park(int regno,String color)
+	{
+		slot unique = slotrepo.getslot();
+		if(unique!=null) {
+		System.out.print(unique.getId());
+		unique.setColor(color);
+		unique.setOccupied(true);
+		unique.setRegistration_no(regno);
+		unique.setTicket("P"+unique.getParkinglotno()+regno);
+		slotrepo.save(unique);
+		}
+		else
+		{
+			return "All the slots are full";
+		}
+		return "parked successfully with ticket no"+unique.getTicket();
+	}
+	
+
+}

@@ -1,0 +1,46 @@
+package com.example.demo.service;
+
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.Assert.assertEquals;
+
+import com.example.demo.entity.slot;
+
+@SpringBootTest
+public class parkingfunctionalitiesTest {
+
+	
+	@Mock
+	private ParkingSlot parkingdlot;
+	
+	@InjectMocks
+    private ParkingFunctionalities parkingService;
+	
+
+	
+	@Test
+	public void createParkingLotTest() {
+		
+	    ParkingLot userToReturnFromRepository = new User();
+	     userToReturnFromRepository.setAuthToken(YOUR_TOKEN);
+	     when(mockedUserRepository.save(any(User.class)).thenReturn(userToReturnFromRepository);
+		String response = parkingService.create(2);
+		String expected="Success";
+		assertEquals(expected,response);
+	}
+	
+	@Test
+	public void parkVehicleTest()  {
+
+		
+		Integer registration_no=123;
+		String color="GREEN";
+		String response = parkingService.park(registration_no, color);
+		assertEquals("parked successfully", response);
+	}
+
+	
+}

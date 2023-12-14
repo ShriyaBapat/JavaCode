@@ -1,0 +1,26 @@
+package com.example.demo.model;
+
+public class Car {
+	
+	private int registration_no;
+	private int color;
+	public int getRegistration_no() {
+		return registration_no;
+	}
+	public void setRegistration_no(int registration_no) {
+		this.registration_no = registration_no;
+	}
+	public Car(int registration_no, int color) {
+		super();
+		this.registration_no = registration_no;
+		this.color = color;
+	}
+	public int getColor() {
+		return color;
+	}
+	public void setColor(int color) {
+		this.color = color;
+	}
+	
+
+}

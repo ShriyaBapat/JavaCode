@@ -1,0 +1,4 @@
+spring.datasource.jdbc-url:jdbc:mysql://localhost:3306/imtddemo1
+spring.datasource.username: root
+spring.datasource.password: Binghamton@2929
+spring.datasource.driver-class-name:com.mysql.cj.jdbc.Driver

@@ -1,0 +1,24 @@
+package com.example.demo.service;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class parkingfunctionalitiesTest {
+
+	ParkingFunctionalities parkingService = null;
+
+	@Before
+	public void init() {
+		parkingService = new ParkingFunctionalities();
+	}
+	
+	@Test
+	public void createParkingLotTest() throws Exception {
+
+		String response = parkingService.create(2);
+		Assert.assertEquals("Parking lot with 2 slots created", response);
+	}
+
+	
+}

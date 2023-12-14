@@ -1,0 +1,20 @@
+package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.ParkingSlot;
+
+@Repository
+public interface ParkingLotRepository extends JpaRepository<ParkingSlot, Integer> {
+	
+	@Query(value = "SELECT  min(id) from parkinglot_info where free_lots!=0", nativeQuery = true)
+	public Integer getid();
+	
+	@Query(value = "SELECT  a1.id,a1.capacity,a1.free_lots from parkinglot_info a1 where a1.id=:id", nativeQuery = true)
+	public ParkingSlot getentity(@Param("id") int id);
+
+
+}

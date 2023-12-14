@@ -1,0 +1,4 @@
+spring.datasource.jdbc-url:jdbc:mysql://localhost:3306/parkinglotdb
+spring.datasource.username: root
+spring.datasource.password: Binghamton@2929
+sspring.datasource.driver-class-name=com.mysql.jdbc.Driver

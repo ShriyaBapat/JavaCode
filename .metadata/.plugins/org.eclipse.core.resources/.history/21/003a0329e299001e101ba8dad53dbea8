@@ -1,0 +1,31 @@
+package com.example.demo.service;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class parkingfunctionalitiesTest {
+
+	ParkingFunctionalities parkingService = new ParkingFunctionalities();
+
+
+	
+	@Test
+	public void createParkingLotTest() throws Exception {
+
+		String response = parkingService.create(2);
+		Assert.assertEquals("Parking lot with 2 slots created", response);
+	}
+	
+	@Test
+	public void parkVehicleTest() throws Exception {
+
+		
+		Integer registration_no=123;
+		String color="GREEN";
+		String response = parkingService.park(registration_no, color);
+		Assert.assertEquals("parked successfully with ticket no 1P123", response);
+	}
+
+	
+}

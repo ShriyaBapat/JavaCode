@@ -1,0 +1,40 @@
+package com.example.demo.model;
+
+public class Car {
+	
+	private int registration_no;
+	private int color;
+	private int slot;
+	private int ticket;
+	public int getSlot() {
+		return slot;
+	}
+	public void setSlot(int slot) {
+		this.slot = slot;
+	}
+	public int getTicket() {
+		return ticket;
+	}
+	public void setTicket(int ticket) {
+		this.ticket = ticket;
+	}
+	public int getRegistration_no() {
+		return registration_no;
+	}
+	public void setRegistration_no(int registration_no) {
+		this.registration_no = registration_no;
+	}
+	public Car(int registration_no, int color) {
+		super();
+		this.registration_no = registration_no;
+		this.color = color;
+	}
+	public int getColor() {
+		return color;
+	}
+	public void setColor(int color) {
+		this.color = color;
+	}
+	
+
+}

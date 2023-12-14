@@ -1,0 +1,15 @@
+package com.example.demo.service;
+
+import org.junit.Before;
+
+public class parkingfunctionalitiesTest {
+
+	ParkingFunctionalities parkingService = null;
+
+	@Before
+	public void init() {
+		parkingService = new ParkingFunctionalities();
+	}
+
+	
+}

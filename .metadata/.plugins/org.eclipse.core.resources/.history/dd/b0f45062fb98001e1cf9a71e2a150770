@@ -1,0 +1,43 @@
+package com.example.demo.entity;
+
+public class Car {
+	
+	private int registration_no;
+	private int color;
+	private int slot;
+	private int ticket;
+	public Car(int registration_no, int color, int slot, int ticket) {
+		super();
+		this.registration_no = registration_no;
+		this.color = color;
+		this.slot = slot;
+		this.ticket = ticket;
+	}
+	public int getSlot() {
+		return slot;
+	}
+	public void setSlot(int slot) {
+		this.slot = slot;
+	}
+	public int getTicket() {
+		return ticket;
+	}
+	public void setTicket(int ticket) {
+		this.ticket = ticket;
+	}
+	public int getRegistration_no() {
+		return registration_no;
+	}
+	public void setRegistration_no(int registration_no) {
+		this.registration_no = registration_no;
+	}
+	
+	public int getColor() {
+		return color;
+	}
+	public void setColor(int color) {
+		this.color = color;
+	}
+	
+
+}

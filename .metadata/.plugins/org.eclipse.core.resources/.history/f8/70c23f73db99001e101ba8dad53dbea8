@@ -1,0 +1,21 @@
+package com.example.demo;
+
+import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class slotTest {
+	
+	 	@Mock
+	    private slotRepository slotrepo;
+
+	    @InjectMocks
+	    private AnalyzeMasterEntity entity;
+
+}

@@ -1,0 +1,13 @@
+package com.example.demo.model;
+
+import java.util.List;
+
+import com.example.demo.entity.Car;
+
+public class ParkingLot {
+	
+	private int capacity;
+	public List<Car> carlist;
+	
+
+}

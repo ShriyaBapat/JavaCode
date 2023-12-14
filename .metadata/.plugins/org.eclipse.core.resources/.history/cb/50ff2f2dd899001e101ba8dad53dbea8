@@ -1,0 +1,68 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.ParkingLot;
+import com.example.demo.repository.slotRepository;
+import com.example.demo.service.ParkingFunctionalities;
+
+@RestController
+public class Controller {
+	
+	@Autowired
+	private ParkingFunctionalities parkingfunc;
+	
+	@Autowired
+	private slotRepository slotrepo;
+	
+	@GetMapping("/create")
+	public String createparkinglot(@RequestParam("capacity") Integer capacity)
+			throws Exception {
+		
+		String lot=parkingfunc.create(capacity);
+
+		
+		return "ParkingLot Created with capacity "+capacity;
+	}
+	
+	@GetMapping("/parkcar")
+	public String parkcar(@RequestParam("regno") Integer regno,@RequestParam("color") String color)
+			throws Exception {
+		
+		String status=parkingfunc.park(regno, color);
+		
+
+		
+		return status;
+	}
+	
+	@GetMapping("/getRegNumbers")
+	public List<Integer> getRegistrationNumbers(@RequestParam("color") String color)
+	{
+		List<Integer> RegList=slotrepo.getRegNo(color);
+		return RegList;
+	}
+	
+	@GetMapping("/getTicketNo")
+	public String getTicketNo(@RequestParam("regno") Integer regno)
+	{
+		String ticket=slotrepo.getTicket(regno);
+		return ticket;
+	}
+	
+	@GetMapping("/getTickets")
+	public List<String> getTicketNo(@RequestParam("color") String color)
+	{
+		 List<String tickets>=slotrepo.getTicketsbasedoncolor(color);
+		return tickets;
+	}
+	
+	
+	
+
+}

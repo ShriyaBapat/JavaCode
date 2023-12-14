@@ -1,0 +1,15 @@
+package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+
+import com.example.demo.entity.slot;
+
+@Repository
+public interface slotRepository extends JpaRepository<slot, Integer> {
+	
+	@Query(value = "SELECT DISTINCT file_id FROM analyze_master WHERE isProcessed=true", nativeQuery = true)
+	public slot getDistinctDoclist();
+
+}

@@ -1,0 +1,81 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.ParkingSlot;
+import com.example.demo.entity.slot;
+
+import com.example.demo.repository.*;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Service
+public class ParkingFunctionalities {
+	
+	@Autowired
+	private slotRepository slotrepo;
+	
+	@Autowired
+	private ParkingLotRepository parkinglotrepo;
+	
+	public String create(int capacity)
+	{
+	//created a parking lot with given capacity
+	ParkingSlot parking=new ParkingSlot();
+	parking.setCapacity(capacity);
+	parking.setFree_lots(capacity);
+	parkinglotrepo.save(parking);
+	
+	//creating each slots in parking lot with default values
+	for(int i=0;i<capacity;i++)
+	{
+		slot eachslot=new slot();
+		eachslot.setOccupied(false);
+		eachslot.setParkinglotno(parking.getId());
+		slotrepo.save(eachslot);
+		
+	}
+	return "Success";
+	}
+	
+	public String park(int regno,String color)
+	{
+		// Get the id of parking lot which have free slots
+		
+		if(slotrepo.checkRegno(regno)==null)
+		{
+			return " Already exists a car with same registration number";
+		}
+		if((parkinglotrepo.getid())!=null) {
+		int id=parkinglotrepo.getid();
+	    ParkingSlot currentlot=parkinglotrepo.getentity(id);
+	    
+	    //Get the nearest slot from current chosen parkinglot to park the vehicle
+		slot unique = slotrepo.getslot(id);
+		if(unique!=null) {
+			
+		
+		//Set the details of vehicle to that particular slot details regarding which color 
+		// and registration car is parked at that particular slot
+		unique.setColor(color);
+		unique.setOccupied(true);
+		unique.setRegistration_no(regno);
+		unique.setTicket("P"+unique.getParkinglotno()+regno);
+		currentlot.setFree_lots(currentlot.getFree_lots()-1);
+		parkinglotrepo.save(currentlot);
+		slotrepo.save(unique);
+		}
+		}
+		//If no parking lot has empty slots return message of all slots are full
+		else
+		{
+			return "All the slots are full";
+		}
+		return "parked successfully";
+	}
+	
+
+}

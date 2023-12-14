@@ -1,0 +1,22 @@
+package com.example.demo.model;
+
+import java.util.List;
+
+import com.example.demo.entity.Car;
+import com.example.demo.entity.slot;
+
+public class ParkingLot {
+	
+	
+	public int getCapacity() {
+		return capacity;
+	}
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+	
+	private int capacity;
+	public List<slot> slots;
+	
+
+}
