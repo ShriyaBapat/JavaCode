@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ParkingLot (1)" project="ParkingLot" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="com.example.demo.ParkingLotApplicationTests" time="0.966" displayname="ParkingLotApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.ParkingLotApplicationTests]">
-    <testcase name="contextLoads" classname="com.example.demo.ParkingLotApplicationTests" time="0.968" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.ParkingLotApplicationTests]/[method:contextLoads()]"/>
-  </testsuite>
-  <testsuite name="com.example.demo.entity.slotTest" time="0.311" displayname="slotTest" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.entity.slotTest]">
-    <testcase name="testGettersAndSetters" classname="com.example.demo.entity.slotTest" time="0.073" displayname="testGettersAndSetters()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.entity.slotTest]/[method:testGettersAndSetters()]"/>
-    <testcase name="testSave" classname="com.example.demo.entity.slotTest" time="0.228" displayname="testSave()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.entity.slotTest]/[method:testSave()]"/>
-  </testsuite>
-</testrun>
