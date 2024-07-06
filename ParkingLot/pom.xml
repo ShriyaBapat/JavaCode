@@ -5,7 +5,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.0</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>ParkingLot</artifactId>
@@ -120,7 +120,7 @@
 		<dependency>
 			<groupId>com.azure</groupId>
 			<artifactId>azure-ai-formrecognizer</artifactId>
-			<version>4.1.1</version>
+			<version>4.1.8</version>
 		</dependency>
 	</dependencies>
 	<build>
